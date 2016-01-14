@@ -21,6 +21,15 @@ bigass_number = (
 '71636269561882670428252483600823257530420752963450')
 
 def find_highest_adjacent_product(n):
+    '''
+    (int) -> int
+
+    Find the highest product between n adjacent numbers inside the 1000 digit
+    number given.
+
+    >>>find_highest_adjacent_product(2):
+    81
+    '''
     highest_product = 0
     for i in range(1001):
         current_product = 1
