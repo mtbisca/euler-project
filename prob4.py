@@ -18,6 +18,11 @@ def is_palindrome(s): #3d method-> letter by letter comparisions
         return is_palindrome(s[1:-1])
 
 def highest_palindrome_product():
+    '''
+    () -> int
+    Find the highest product between two three-digit numbers that is also
+    a palindrome.
+    '''
     highest_product = 0
     for i in range(1000):
         for j in range(1000):
