@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//find the horizontal product between current position and next three, if possible
 int lineProduct(int currentI, int currentJ, int grid[][20]) {
     if(currentJ + 3 < 20) {
         int j;
@@ -12,7 +13,7 @@ int lineProduct(int currentI, int currentJ, int grid[][20]) {
     }
 }
 
-
+//find the vertical product between current position and next three, if possible
 int columnProduct(int currentI, int currentJ, int grid[][20]) {
     if(currentI + 3 < 20) {
         int i;
@@ -25,7 +26,7 @@ int columnProduct(int currentI, int currentJ, int grid[][20]) {
     }
 }
 
-
+//find the diagonal product between current position and next three, if possible
 int diagonalProduct(int currentI, int currentJ, int grid[][20]) {
     if(currentI + 3 < 20 && currentJ + 3 < 20) {
         int sum;
@@ -38,6 +39,7 @@ int diagonalProduct(int currentI, int currentJ, int grid[][20]) {
     }
 }
 
+//find the other diagonal product between current position and next three, if possible
 int otherDiagonalProduct(int currentI, int currentJ, int grid[][20]) {
     if(currentI + 3 < 20 && currentJ - 3 >= 0) {
         int sum;
@@ -50,7 +52,7 @@ int otherDiagonalProduct(int currentI, int currentJ, int grid[][20]) {
     }
 }
 
-
+//return highest of all possible products
 int findHighestProduct(int currentI, int currentJ, int grid[][20]) {
     int lp = lineProduct(currentI, currentJ, grid);
     int cp = columnProduct(currentI, currentJ, grid);
@@ -74,8 +76,8 @@ int main() {
         for(j = 0; j < 20; j++)
             scanf("%d", &grid[i][j]);
 
-    int maxProduct = 1;
-    int currentProduct;
+    int maxProduct = 1; //highest product found so far
+    int currentProduct; //highest product at current position
     for(i = 0; i < 20; i++) {
         for(j = 0; j < 20; j++) {
             currentProduct = findHighestProduct(i, j, grid);
